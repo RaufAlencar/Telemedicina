@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Move Telemedicina | Saúde 24h e Especialidades a um clique</title>
+  <meta name="description" content="Pronto atendimento médico 24/7, telepsicologia e diversas especialidades. Segurança, agilidade e saúde na palma da sua mão.">
+  <meta name="keywords" content="telemedicina, médico online, pronto atendimento, receita digital, move telemedicina">
+
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* Estilo exclusivo para o botão Consultar Agora (Vermelho Claro) */
+    .btn-consultar-red {
+      background-color: #ff4757 !important;
+      color: #ffffff !important;
+      border: 2px solid #ff4757 !important;
+      font-weight: 600 !important;
+      transition: 0.3s ease-in-out;
+    }
+    .btn-consultar-red:hover {
+      background-color: #ff6b81 !important;
+      border-color: #ff6b81 !important;
+      box-shadow: 0px 4px 15px rgba(255, 71, 87, 0.4);
+    }
+    .btn-consultar-outline-red {
+      background-color: transparent !important;
+      color: #ff4757 !important;
+      border: 2px solid #ff4757 !important;
+      font-weight: 600 !important;
+    }
+    .btn-consultar-outline-red:hover {
+      background-color: #ff4757 !important;
+      color: #ffffff !important;
+    }
+    /* Aumento de fonte para parágrafos de destaque */
+    .text-destaque {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: #555;
+    }
+    
+    /* Ajuste de Tamanho da Logo Move Telemedicina */
+    .header .logo img {
+      max-height: 65px !important; 
+      width: auto; 
+    }
+
+    /* 1. Status Online Pulsante (Luz Verde) */
+    .status-online {
+      width: 10px;
+      height: 10px;
+      background-color: #28a745;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 8px;
+      box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7);
+      animation: pulse-green 2s infinite;
+    }
+    @keyframes pulse-green {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(40, 167, 69, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(40, 167, 69, 0); }
+    }
+
+    /* 2. Animação do Ticker (Banner Passando) */
+    .ticker-wrap {
+      width: 100%; overflow: hidden; background-color: var(--accent-color);
+      padding: 12px 0; border-bottom: 3px solid rgba(0,0,0,0.1); box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .ticker {
+      display: inline-block; white-space: nowrap; padding-right: 100%;
+      animation: ticker 40s linear infinite;
+    }
+    .ticker:hover { animation-play-state: paused; cursor: pointer; }
+    .ticker-item {
+      display: inline-block; padding: 0 40px; font-size: 1.1rem; color: #fff;
+      font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
+    }
+    .ticker-item i { color: #021342; margin-right: 8px; font-size: 1.2rem; }
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* 3. Botão WhatsApp Flutuante */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 20px;
+      left: 20px;
+      background-color: #25d366;
+      color: #FFF;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    .whatsapp-float:hover {
+      background-color: #128C7E;
+      color: #fff;
+      transform: scale(1.1);
+    }
+
+    /* 4. Banner de Cookies LGPD */
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(2, 19, 66, 0.95);
+      color: #fff;
+      padding: 15px 20px;
+      z-index: 10000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+    }
+    .cookie-banner p { margin: 0; font-size: 0.95rem; flex: 1; min-width: 250px; line-height: 1.5; }
+    .cookie-banner .btn-accept {
+      background-color: var(--accent-color);
+      color: #fff;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-left: 20px;
+      white-space: nowrap;
+    }
+    .cookie-banner .btn-accept:hover { background-color: #009388; }
+
+    /* REGRAS DE RESPONSIVIDADE (MOBILE FIRST) */
+    @media (max-width: 768px) {
+      .display-4 { font-size: 2.2rem !important; }
+      .display-5 { font-size: 1.8rem !important; }
+      .display-6 { font-size: 1.5rem !important; }
+      .text-destaque { font-size: 1rem; }
+      .hero .btn-get-started { width: 100%; margin-bottom: 10px; margin-left: 0 !important; }
+      /* Previne que a etiqueta estoure a tela no mobile */
+      .pricing-item.featured { transform: none !important; margin-top: 20px; }
+      /* Ajuste da logo para mobile (um pouco menor para caber com o menu hamburguer) */
+      .header .logo img { max-height: 50px !important; } 
+      /* Ajustes extras para celular */
+      .cookie-banner { flex-direction: column; text-align: center; gap: 15px; padding-bottom: 20px; }
+      .cookie-banner .btn-accept { margin-left: 0; width: 100%; }
+      .whatsapp-float { bottom: 85px; width: 50px; height: 50px; font-size: 26px; }
+    }
+  </style>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header sticky-top">
+
+    <div class="topbar d-flex align-items-center">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="d-none d-md-flex align-items-center">
+          <span class="status-online"></span>
+          <i class="bi bi-clock me-1"></i> Pronto Atendimento Clínico 24 horas, 7 dias por semana
+        </div>
+        <div class="d-flex align-items-center">
+          <i class="bi bi-whatsapp me-1"></i> Suporte Imediato: (41) 9550-0770
+        </div>
+      </div>
+    </div>
+
+    <div class="branding d-flex align-items-center">
+
+      <div class="container position-relative d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center me-auto">
+          <img src="assets/img/logo.png" alt="Move Telemedicina">
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="#hero" class="active">Início</a></li>
+            <li><a href="#about">A Plataforma</a></li>
+            <li><a href="#services">Como Funciona</a></li>
+            <li><a href="#tabs">Especialidades</a></li>
+            <li><a href="#pricing">Planos</a></li>
+            <li><a href="portal-de-negocios.html" style="color: #ff4757; font-weight: bold;">Para Empresas</a></li>
+            <li><a href="#faq">Dúvidas</a></li>
+            <li><a href="#contact">Contato</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+        <div class="d-none d-lg-flex align-items-center ms-3 gap-2">
+          <a class="cta-btn btn-consultar-outline-red m-0" href="#login">Consultar Agora</a>
+          <a class="cta-btn m-0" href="#appointment">Realizar Cadastro</a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main class="main">
+
+    <section id="hero" class="hero section">
+
+      <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+
+        <div class="carousel-item active">
+          <img src="assets/img/hero-carousel/hero-carousel-1.jpg" alt="Atendimento Médico Online">
+          <div class="container">
+            <h2 class="display-4 fw-bold mb-4">Sua Saúde Não Pode Esperar</h2>
+            <p class="fs-5 mb-4 d-none d-md-block">A sua saúde e a da sua família não devem ficar reféns de filas intermináveis em prontos-socorros. Com a Move Telemedicina, você tem acesso imediato a médicos clínicos gerais de excelência, 24 horas por dia e 7 dias por semana.</p>
+            <p class="fs-6 mb-4 d-block d-md-none">Acesso imediato a médicos clínicos gerais de excelência, 24 horas por dia. Tudo pelo seu celular, com receitas válidas em qualquer farmácia.</p>
+            <div class="d-flex justify-content-center flex-wrap gap-2">
+              <a href="#appointment" class="btn-get-started fs-6 px-4 py-3 text-center">Realizar Cadastro</a>
+              <a href="#login" class="btn-get-started btn-consultar-red fs-6 px-4 py-3 text-center">Consultar Agora</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="assets/img/hero-carousel/hero-carousel-2.jpg" alt="Segurança de Dados">
+          <div class="container">
+            <h2 class="display-4 fw-bold mb-4">Tecnologia e Sigilo Absoluto</h2>
+            <p class="fs-5 mb-4 d-none d-md-block">Trabalhamos com uma infraestrutura tecnológica de ponta para garantir que seu histórico médico esteja sempre protegido. Nossa plataforma possui criptografia avançada de ponta a ponta (LGPD).</p>
+            <p class="fs-6 mb-4 d-block d-md-none">Infraestrutura tecnológica de ponta para garantir proteção com criptografia avançada de ponta a ponta (LGPD).</p>
+            <div class="d-flex justify-content-center flex-wrap gap-2">
+              <a href="#appointment" class="btn-get-started fs-6 px-4 py-3 text-center">Realizar Cadastro</a>
+              <a href="#about" class="btn-get-started btn-consultar-outline-red text-white fs-6 px-4 py-3 text-center" style="border-color: #fff;">Conhecer a Plataforma</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="assets/img/hero-carousel/hero-carousel-3.jpg" alt="Especialidades Médicas">
+          <div class="container">
+            <h2 class="display-4 fw-bold mb-4">Cuidado Integral e Contínuo</h2>
+            <p class="fs-5 mb-4 d-none d-md-block">Nós entendemos que o cuidado com a saúde vai muito além do pronto atendimento. Por isso, conectamos você aos melhores especialistas em Psiquiatria, Pediatria, Cardiologia, Nutrição e Telepsicologia.</p>
+            <p class="fs-6 mb-4 d-block d-md-none">Conectamos você aos melhores especialistas. Um ecossistema completo focado exclusivamente no seu bem-estar.</p>
+            <div class="d-flex justify-content-center flex-wrap gap-2">
+              <a href="#appointment" class="btn-get-started fs-6 px-4 py-3 text-center">Realizar Cadastro</a>
+              <a href="#tabs" class="btn-get-started btn-consultar-outline-red text-white fs-6 px-4 py-3 text-center" style="border-color: #fff;">Ver Especialidades</a>
+            </div>
+          </div>
+        </div>
+
+        <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
+        <ol class="carousel-indicators"></ol>
+
+      </div>
+
+    </section>
+
+    <div class="ticker-wrap">
+      <div class="ticker">
+        <div class="ticker-item"><i class="bi bi-camera-video-fill"></i> Consultas Imediatas por Vídeo</div>
+        <div class="ticker-item"><i class="bi bi-file-earmark-medical-fill"></i> Receita Digital Aceita no Brasil</div>
+        <div class="ticker-item"><i class="bi bi-wallet2"></i> Zero Coparticipação no P.A.</div>
+        <div class="ticker-item"><i class="bi bi-heart-pulse-fill"></i> Plantão Pediátrico 24h</div>
+        <div class="ticker-item"><i class="bi bi-shield-check"></i> Prontuário 100% Seguro LGPD</div>
+        <div class="ticker-item"><i class="bi bi-person-hearts"></i> Telepsicologia e Nutrição</div>
+        <div class="ticker-item"><i class="bi bi-camera-video-fill"></i> Consultas Imediatas por Vídeo</div>
+        <div class="ticker-item"><i class="bi bi-file-earmark-medical-fill"></i> Receita Digital Aceita no Brasil</div>
+        <div class="ticker-item"><i class="bi bi-wallet2"></i> Zero Coparticipação no P.A.</div>
+        <div class="ticker-item"><i class="bi bi-heart-pulse-fill"></i> Plantão Pediátrico 24h</div>
+        <div class="ticker-item"><i class="bi bi-shield-check"></i> Prontuário 100% Seguro LGPD</div>
+        <div class="ticker-item"><i class="bi bi-person-hearts"></i> Telepsicologia e Nutrição</div>
+      </div>
+    </div>
+    
+    <section id="featured-services" class="featured-services section">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-12 col-md-6 col-xl-3 d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item position-relative w-100">
+              <div class="icon"><i class="fas fa-heartbeat icon"></i></div>
+              <h4 class="fs-4"><a href="#services" class="stretched-link">Pronto Atendimento P.A.</a></h4>
+              <p class="text-destaque fs-6">Nossos médicos clínicos gerais estão a postos 24 horas por dia. Basta acessar, passar pela rápida triagem e iniciar sua vídeo-consulta imediatamente.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-xl-3 d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative w-100">
+              <div class="icon"><i class="fas fa-pills icon"></i></div>
+              <h4 class="fs-4"><a href="#features" class="stretched-link">Receita 100% Digital</a></h4>
+              <p class="text-destaque fs-6">Ficou doente ou precisa renovar uma receita contínua? Nossas prescrições possuem assinatura digital ICP-Brasil e são aceitas em todas as farmácias.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-xl-3 d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative w-100">
+              <div class="icon"><i class="fas fa-file-medical icon"></i></div>
+              <h4 class="fs-4"><a href="#features" class="stretched-link">Atestados e Exames</a></h4>
+              <p class="text-destaque fs-6">Emissão de atestados médicos de afastamento e guias de exames laboratoriais, enviados de forma totalmente segura diretamente para o seu celular ou e-mail.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-xl-3 d-flex" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative w-100">
+              <div class="icon"><i class="fas fa-brain icon"></i></div>
+              <h4 class="fs-4"><a href="#tabs" class="stretched-link">Telepsicologia</a></h4>
+              <p class="text-destaque fs-6">Sua saúde mental levada a sério. Oferecemos suporte psicológico estruturado, terapias semanais ou quinzenais e atendimento emergencial para crises.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="call-to-action" class="call-to-action section accent-background">
+      <div class="container">
+        <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-12 col-xl-10">
+            <div class="text-center">
+              <h3 class="display-6 fw-bold">Precisa falar com um médico agora mesmo?</h3>
+              <p class="fs-5 mt-3 mb-4">O tempo é precioso quando o assunto é saúde. Na Move Telemedicina, você não precisa agendar para passar no clínico geral. Em poucos cliques você preenche seus sintomas, faz a triagem e já entra na sala virtual com o plantonista. Rápido, seguro, humano e altamente resolutivo.</p>
+              <div class="d-flex justify-content-center flex-wrap gap-3">
+                <a class="cta-btn btn-consultar-red px-4 px-md-5 py-3 fs-5" href="#login">CONSULTAR AGORA</a>
+                <a class="cta-btn px-4 px-md-5 py-3 fs-5" href="#appointment" style="background: transparent; border: 2px solid #fff; color: #fff;">REALIZAR CADASTRO</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2 class="display-5 fw-bold">A Move Telemedicina<br></h2>
+        <p class="fs-5 mt-2">Transformando o acesso à saúde através da união perfeita entre inovação tecnológica e o cuidado médico humanizado.</p>
+      </div>
+      <div class="container">
+        <div class="row gy-5">
+          <div class="col-12 col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="100">
+            <img src="assets/img/about.jpg" class="img-fluid rounded shadow-lg w-100" alt="">
+            <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a>
+          </div>
+          <div class="col-12 col-lg-6 content" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="fs-2 fw-bold mb-4">Profissionais altamente experientes cuidando de você de onde você estiver.</h3>
+            <p class="text-destaque fst-italic mb-4">
+              Sabemos que o modelo tradicional de saúde muitas vezes é cansativo, demorado e caro. Nossa plataforma é um HUB completo de serviços médicos, garantindo excelência técnica e resolução real para o seu dia a dia.
+            </p>
+            <ul class="text-destaque mb-4 list-unstyled">
+              <li class="mb-3 d-flex"><i class="bi bi-check2-all text-success fs-4 me-2"></i> <span><strong>Chega de trânsito e filas:</strong> Seja atendido no conforto da sua casa ou durante uma viagem.</span></li>
+              <li class="mb-3 d-flex"><i class="bi bi-check2-all text-success fs-4 me-2"></i> <span><strong>Altíssima Resolutividade:</strong> A grande maioria dos casos clínicos leves são solucionados online de forma segura.</span></li>
+              <li class="mb-3 d-flex"><i class="bi bi-check2-all text-success fs-4 me-2"></i> <span><strong>Corpo Clínico Premium:</strong> Médicos selecionados com rigor, seguindo protocolos éticos e empáticos.</span></li>
+            </ul>
+            <p class="text-destaque">
+              Desde uma simples dor de cabeça, até a necessidade de renovar uma receita contínua ou cuidar da saúde emocional. A Move Telemedicina entrega a infraestrutura completa para que você viva melhor e com tranquilidade.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="stats" class="stats section light-background">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="stats-item d-flex align-items-center w-100 h-100 p-4 rounded bg-white shadow-sm">
+              <i class="fas fa-user-md flex-shrink-0 fs-1 text-primary"></i>
+              <div class="ms-4">
+                <span data-purecounter-start="0" data-purecounter-end="100" data-purecounter-duration="1" class="purecounter display-5 fw-bold"></span>
+                <p class="mb-0 fs-6 text-muted">Médicos Parceiros</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="stats-item d-flex align-items-center w-100 h-100 p-4 rounded bg-white shadow-sm">
+              <i class="far fa-hospital flex-shrink-0 fs-1 text-primary"></i>
+              <div class="ms-4">
+                <span data-purecounter-start="0" data-purecounter-end="35" data-purecounter-duration="1" class="purecounter display-5 fw-bold"></span>
+                <p class="mb-0 fs-6 text-muted">Especialidades</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="stats-item d-flex align-items-center w-100 h-100 p-4 rounded bg-white shadow-sm">
+              <i class="fas fa-clock flex-shrink-0 fs-1 text-primary"></i>
+              <div class="ms-4">
+                <span data-purecounter-start="0" data-purecounter-end="24" data-purecounter-duration="1" class="purecounter display-5 fw-bold"></span>
+                <p class="mb-0 fs-6 text-muted">Horas por Dia</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <div class="stats-item d-flex align-items-center w-100 h-100 p-4 rounded bg-white shadow-sm">
+              <i class="fas fa-shield-alt flex-shrink-0 fs-1 text-primary"></i>
+              <div class="ms-4">
+                <span data-purecounter-start="0" data-purecounter-end="100" data-purecounter-duration="1" class="purecounter display-5 fw-bold"></span>
+                <p class="mb-0 fs-6 text-muted">% LGPD Seguro</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="features section">
+      <div class="container">
+        <div class="row justify-content-around gy-5">
+          <div class="col-12 col-lg-6 features-image" data-aos="fade-up" data-aos-delay="100">
+            <img src="assets/img/features.jpg" class="rounded shadow w-100" alt="">
+          </div>
+          <div class="col-12 col-lg-5 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="display-6 fw-bold mb-4">Tecnologia blindada para garantir a sua total privacidade</h3>
+            <p class="text-destaque mb-5">Os seus dados de saúde são valiosos. Por isso, a Move Telemedicina opera sob os mais rigorosos padrões de segurança digital globais.</p>
+
+            <div class="icon-box d-flex position-relative mb-4" data-aos="fade-up" data-aos-delay="300">
+              <i class="fa-solid fa-lock flex-shrink-0"></i>
+              <div>
+                <h4 class="fs-4"><a href="" class="stretched-link text-dark">Compliance LGPD</a></h4>
+                <p class="text-muted fs-6 mt-2">Nossas rotinas estão em conformidade jurídica total com a Lei Geral de Proteção de Dados.</p>
+              </div>
+            </div>
+            <div class="icon-box d-flex position-relative mb-4" data-aos="fade-up" data-aos-delay="400">
+              <i class="fa-solid fa-server flex-shrink-0"></i>
+              <div>
+                <h4 class="fs-4"><a href="" class="stretched-link text-dark">Criptografia Ponta a Ponta</a></h4>
+                <p class="text-muted fs-6 mt-2">A transmissão de vídeo é criptografada e seu histórico é salvo em nuvem ultrassegura.</p>
+              </div>
+            </div>
+            <div class="icon-box d-flex position-relative mb-4" data-aos="fade-up" data-aos-delay="500">
+              <i class="fa-solid fa-file-signature flex-shrink-0"></i>
+              <div>
+                <h4 class="fs-4"><a href="" class="stretched-link text-dark">Validade Legal ICP-Brasil</a></h4>
+                <p class="text-muted fs-6 mt-2">A receita que o médico te passa no app tem o mesmo valor legal de um carimbo em papel.</p>
+              </div>
+            </div>
+            <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="600">
+              <i class="fa-solid fa-laptop-medical flex-shrink-0"></i>
+              <div>
+                <h4 class="fs-4"><a href="" class="stretched-link text-dark">Prontuário Único</a></h4>
+                <p class="text-muted fs-6 mt-2">Independente do médico, seu histórico fica centralizado. Isso evita erros e acelera o diagnóstico.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="services section light-background">
+      <div class="container section-title" data-aos="fade-up">
+        <h2 class="display-5 fw-bold">Como Funciona o Atendimento</h2>
+        <p class="fs-5 mt-3">Criamos um processo rápido, intuitivo e livre de burocracias.</p>
+      </div>
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item position-relative bg-white rounded shadow-sm p-4 h-100 w-100">
+              <div class="icon mb-4"><i class="fas fa-id-badge fs-1"></i></div>
+              <h3 class="fs-4 fw-bold text-dark">1. Identificação</h3>
+              <p class="text-muted mt-3 fs-6">Um login simples. O sistema valida quem você é de forma segura, garantindo que ninguém além de você acesse seu painel.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative bg-white rounded shadow-sm p-4 h-100 w-100">
+              <div class="icon mb-4"><i class="fas fa-clipboard-check fs-1"></i></div>
+              <h3 class="fs-4 fw-bold text-dark">2. Teletriagem</h3>
+              <p class="text-muted mt-3 fs-6">Ao iniciar o Pronto Atendimento, você preenche rapidamente sua queixa atual. Nosso sistema classifica o risco para prioridades.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative bg-white rounded shadow-sm p-4 h-100 w-100">
+              <div class="icon mb-4"><i class="fas fa-video fs-1"></i></div>
+              <h3 class="fs-4 fw-bold text-dark">3. A Teleconsulta</h3>
+              <p class="text-muted mt-3 fs-6">Em poucos minutos, você está frente a frente com um clínico geral preparado para ouvir e analisar seu quadro de forma humana.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative bg-white rounded shadow-sm p-4 h-100 w-100">
+              <div class="icon mb-4"><i class="fas fa-prescription fs-1"></i></div>
+              <h3 class="fs-4 fw-bold text-dark">4. Diagnóstico</h3>
+              <p class="text-muted mt-3 fs-6">O médico orienta sobre o que fazer e prescreverá medicamentos, atestados de repouso ou pedidos para exames laboratoriais.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item position-relative bg-white rounded shadow-sm p-4 h-100 w-100">
+              <div class="icon mb-4"><i class="fas fa-mobile-alt fs-1"></i></div>
+              <h3 class="fs-4 fw-bold text-dark">5. No seu Celular</h3>
+              <p class="text-muted mt-3 fs-6">Ao finalizar, você recebe um link seguro por SMS ou WhatsApp com todos os anexos gerados (receita médica) para uso imediato.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-item position-relative bg-white rounded shadow-sm p-4 h-100 w-100">
+              <div class="icon mb-4"><i class="fas fa-calendar-check fs-1"></i></div>
+              <h3 class="fs-4 fw-bold text-dark">6. Acompanhamento</h3>
+              <p class="text-muted mt-3 fs-6">Quando seus exames ficarem prontos, anexe-os na plataforma e realize um novo atendimento ou agende com um especialista.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="appointment" class="appointment section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2 class="display-5 fw-bold">GARANTA SEU ACESSO AGORA</h2>
+        <p class="fs-5 mt-3">Preencha o formulário abaixo. Rápido, fácil e seguro.</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <form action="forms/appointment.php" method="post" role="form" class="php-email-form p-4 p-md-5 rounded shadow-lg bg-white">
+          
+          <h4 class="mb-4 text-primary border-bottom pb-2">Dados Pessoais</h4>
+          <div class="row">
+            <div class="col-12 col-md-4 form-group mb-4">
+              <label class="form-label fw-bold text-muted">Seu Nome Completo *</label>
+              <input type="text" name="name" class="form-control form-control-lg" id="name" placeholder="Ex: João da Silva" required>
+            </div>
+            <div class="col-12 col-md-4 form-group mb-4">
+              <label class="form-label fw-bold text-muted">Seu CPF *</label>
+              <input type="text" class="form-control form-control-lg" name="cpf" id="cpf" placeholder="000.000.000-00" required>
+            </div>
+            <div class="col-12 col-md-4 form-group mb-4">
+              <label class="form-label fw-bold text-muted">Celular / WhatsApp *</label>
+              <input type="tel" class="form-control form-control-lg" name="phone" id="phone" placeholder="(00) 90000-0000" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-md-4 form-group mb-4">
+              <label class="form-label fw-bold text-muted">Seu Melhor E-mail *</label>
+              <input type="email" class="form-control form-control-lg" name="email" id="email" placeholder="seuemail@exemplo.com" required>
+            </div>
+            <div class="col-12 col-md-4 form-group mb-4">
+              <label class="form-label fw-bold text-muted">Data de Nascimento *</label>
+              <input type="date" name="date" class="form-control form-control-lg" id="date" required>
+            </div>
+            <div class="col-12 col-md-4 form-group mb-4">
+              <label class="form-label fw-bold text-muted">Qual o seu interesse hoje? *</label>
+              <select name="department" id="department" class="form-select form-select-lg" required>
+                <option value="">Selecione uma opção</option>
+                <option value="Assinar Plano R$49,90">Assinar o Plano Move</option>
+                <option value="Agendar Consulta Especialista">Agendar Especialista</option>
+                <option value="Plano Empresarial">Sou Empresário (PJ)</option>
+              </select>
+            </div>
+          </div>
+
+          <h4 class="mb-4 mt-2 text-primary border-bottom pb-2">Seu Endereço</h4>
+          <div class="row">
+            <div class="col-12 col-md-3 form-group mb-4">
+              <label class="form-label fw-bold text-muted">CEP *</label>
+              <input type="text" name="cep" class="form-control form-control-lg" id="cep" placeholder="00000-000" onblur="pesquisacep(this.value);" required>
+            </div>
+            <div class="col-8 col-md-7 form-group mb-4">
+              <label class="form-label fw-bold text-muted">Rua/Avenida *</label>
+              <input type="text" class="form-control form-control-lg bg-light" name="rua" id="rua" readonly required>
+            </div>
+            <div class="col-4 col-md-2 form-group mb-4">
+              <label class="form-label fw-bold text-muted">Número *</label>
+              <input type="text" class="form-control form-control-lg" name="numero" id="numero" placeholder="Nº" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-md-4 form-group mb-4">
+              <label class="form-label fw-bold text-muted">Complemento</label>
+              <input type="text" class="form-control form-control-lg" name="complemento" id="complemento" placeholder="Apto, Bloco...">
+            </div>
+            <div class="col-12 col-md-4 form-group mb-4">
+              <label class="form-label fw-bold text-muted">Bairro *</label>
+              <input type="text" class="form-control form-control-lg bg-light" name="bairro" id="bairro" readonly required>
+            </div>
+            <div class="col-8 col-md-3 form-group mb-4">
+              <label class="form-label fw-bold text-muted">Cidade *</label>
+              <input type="text" class="form-control form-control-lg bg-light" name="cidade" id="cidade" readonly required>
+            </div>
+            <div class="col-4 col-md-1 form-group mb-4">
+              <label class="form-label fw-bold text-muted">UF *</label>
+              <input type="text" class="form-control form-control-lg bg-light" name="uf" id="uf" readonly required>
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <div class="loading text-primary fw-bold">Enviando dados de forma segura...</div>
+            <div class="error-message"></div>
+            <div class="sent-message bg-success text-white p-3 rounded text-center fw-bold">Cadastro recebido com sucesso! Um atendente falará com você em instantes.</div>
+            <div class="text-center mt-4 d-flex justify-content-center flex-wrap gap-3">
+              <button type="submit" class="btn btn-primary btn-lg px-5 py-3 fw-bold w-100 w-md-auto">ENVIAR MEU CADASTRO</button>
+              <button type="button" class="btn btn-consultar-red btn-lg px-5 py-3 w-100 w-md-auto" onclick="location.href='#login'">PRECISO CONSULTAR AGORA</button>
+            </div>
+          </div>
+        </form>
+
+        <script>
+          function limpa_formulário_cep() {
+              document.getElementById('rua').value=("");
+              document.getElementById('bairro').value=("");
+              document.getElementById('cidade').value=("");
+              document.getElementById('uf').value=("");
+          }
+          function meu_callback(conteudo) {
+              if (!("erro" in conteudo)) {
+                  document.getElementById('rua').value=(conteudo.logradouro);
+                  document.getElementById('bairro').value=(conteudo.bairro);
+                  document.getElementById('cidade').value=(conteudo.localidade);
+                  document.getElementById('uf').value=(conteudo.uf);
+                  document.getElementById('numero').focus();
+              } else {
+                  limpa_formulário_cep();
+                  alert("CEP não encontrado.");
+              }
+          }
+          function pesquisacep(valor) {
+              var cep = valor.replace(/\D/g, '');
+              if (cep != "") {
+                  var validacep = /^[0-9]{8}$/;
+                  if(validacep.test(cep)) {
+                      document.getElementById('rua').value="Buscando...";
+                      document.getElementById('bairro').value="Buscando...";
+                      document.getElementById('cidade').value="Buscando...";
+                      document.getElementById('uf').value="...";
+                      var script = document.createElement('script');
+                      script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
+                      document.body.appendChild(script);
+                  } else {
+                      limpa_formulário_cep();
+                      alert("Formato de CEP inválido.");
+                  }
+              } else {
+                  limpa_formulário_cep();
+              }
+          }
+        </script>
+      </div>
+    </section>
+
+    <section id="tabs" class="tabs section light-background">
+      <div class="container section-title" data-aos="fade-up">
+        <h2 class="display-5 fw-bold">Nossas Especialidades em Destaque</h2>
+        <p class="fs-5 mt-3">Profissionais referência no mercado prontos para tratar da sua saúde.</p>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row">
+          <div class="col-12 col-lg-3 mb-4 mb-lg-0">
+            <ul class="nav nav-tabs flex-column border-0">
+              <li class="nav-item mb-2"><a class="nav-link active show fs-5 p-3 rounded" data-bs-toggle="tab" href="#tabs-tab-1">Cardiologia</a></li>
+              <li class="nav-item mb-2"><a class="nav-link fs-5 p-3 rounded" data-bs-toggle="tab" href="#tabs-tab-2">Neurologia</a></li>
+              <li class="nav-item mb-2"><a class="nav-link fs-5 p-3 rounded" data-bs-toggle="tab" href="#tabs-tab-3">Telepsicologia</a></li>
+              <li class="nav-item mb-2"><a class="nav-link fs-5 p-3 rounded" data-bs-toggle="tab" href="#tabs-tab-4">Pediatria Infantil</a></li>
+              <li class="nav-item mb-2"><a class="nav-link fs-5 p-3 rounded" data-bs-toggle="tab" href="#tabs-tab-5">Nutrição e Dietética</a></li>
+            </ul>
+          </div>
+          <div class="col-12 col-lg-9">
+            <div class="tab-content bg-white p-4 p-lg-5 rounded shadow-sm">
+              <div class="tab-pane active show" id="tabs-tab-1">
+                <div class="row">
+                  <div class="col-12 col-lg-8 details order-2 order-lg-1">
+                    <h3 class="display-6 fw-bold mb-3">Cardiologia</h3>
+                    <p class="fst-italic fs-5 text-muted mb-4">A prevenção é o melhor remédio para o motor da sua vida.</p>
+                    <p class="text-destaque">Nossos cardiologistas realizam o acompanhamento periódico, controle de hipertensão, avaliação esportiva e análise de exames (colesterol, eletrocardiogramas), tudo online com extrema atenção.</p>
+                  </div>
+                  <div class="col-12 col-lg-4 text-center order-1 order-lg-2 mb-4 mb-lg-0">
+                    <img src="assets/img/departments-1.jpg" alt="" class="img-fluid rounded shadow">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tabs-tab-2">
+                <div class="row">
+                  <div class="col-12 col-lg-8 details order-2 order-lg-1">
+                    <h3 class="display-6 fw-bold mb-3">Neurologia</h3>
+                    <p class="fst-italic fs-5 text-muted mb-4">Atenção especializada ao sistema nervoso.</p>
+                    <p class="text-destaque">Para dores de cabeça frequentes, distúrbios de sono, epilepsia e doenças degenerativas. Você passa com especialistas que vão indicar tratamentos e garantir sua qualidade de vida.</p>
+                  </div>
+                  <div class="col-12 col-lg-4 text-center order-1 order-lg-2 mb-4 mb-lg-0">
+                    <img src="assets/img/departments-2.jpg" alt="" class="img-fluid rounded shadow">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tabs-tab-3">
+                <div class="row">
+                  <div class="col-12 col-lg-8 details order-2 order-lg-1">
+                    <h3 class="display-6 fw-bold mb-3">Telepsicologia</h3>
+                    <p class="fst-italic fs-5 text-muted mb-4">O equilíbrio e a inteligência emocional que você busca.</p>
+                    <p class="text-destaque">A Move disponibiliza sessões de Psicologia. Você escolhe se prefere apenas uma escuta momentânea (P.A Psicológico) ou Planos de Acompanhamento Terapêutico semanais ou quinzenais.</p>
+                  </div>
+                  <div class="col-12 col-lg-4 text-center order-1 order-lg-2 mb-4 mb-lg-0">
+                    <img src="assets/img/departments-3.jpg" alt="" class="img-fluid rounded shadow">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tabs-tab-4">
+                <div class="row">
+                  <div class="col-12 col-lg-8 details order-2 order-lg-1">
+                    <h3 class="display-6 fw-bold mb-3">Pediatria</h3>
+                    <p class="fst-italic fs-5 text-muted mb-4">Cuidado terno e resolutivo para quem você ama.</p>
+                    <p class="text-destaque">Não leve seu filho a um hospital cheio de vírus para ocorrências comuns. Atendimento pediátrico e especialidades infantis online de forma rápida e segura.</p>
+                  </div>
+                  <div class="col-12 col-lg-4 text-center order-1 order-lg-2 mb-4 mb-lg-0">
+                    <img src="assets/img/departments-4.jpg" alt="" class="img-fluid rounded shadow">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tabs-tab-5">
+                <div class="row">
+                  <div class="col-12 col-lg-8 details order-2 order-lg-1">
+                    <h3 class="display-6 fw-bold mb-3">Nutrição e Dietética</h3>
+                    <p class="fst-italic fs-5 text-muted mb-4">Alcance a sua melhor versão com o combustível certo.</p>
+                    <p class="text-destaque">Planos alimentares 100% personalizados. Emagrecimento, ganho de massa, nutrição esportiva ou controle de diabetes, feito por nutricionistas experientes.</p>
+                  </div>
+                  <div class="col-12 col-lg-4 text-center order-1 order-lg-2 mb-4 mb-lg-0">
+                    <img src="assets/img/departments-5.jpg" alt="" class="img-fluid rounded shadow">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing" class="pricing section light-background">
+      <div class="container section-title" data-aos="fade-up">
+        <h2 class="display-5 fw-bold">Escolha Seu Plano Move Saúde</h2>
+        <p class="fs-5 mt-3">Opções flexíveis para você, sua família ou seu negócio. <br><strong>Sem carência e sem fidelidade abusiva.</strong></p>
+      </div>
+      <div class="container">
+        <div class="row gy-4 justify-content-center align-items-center mt-lg-5 pt-lg-5">
+          <div class="col-12 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="pricing-item p-4 p-lg-5 shadow-sm rounded-4 bg-white border h-100">
+              <h3 class="fs-4 fw-bold text-dark mb-2">Individual</h3>
+              <p class="text-muted mb-4">Ideal para quem busca proteção e agilidade no dia a dia.</p>
+              <h4 class="display-5 fw-bold text-dark mb-4"><sup>R$</sup>49,90<span class="fs-6 text-muted fw-normal"> / mês</span></h4>
+              <ul class="text-start fs-6 text-dark mb-5 lh-lg list-unstyled">
+                <li><i class="bi bi-check-circle-fill text-success me-2"></i> P.A 24/7 Clínico Ilimitado</li>
+                <li><i class="bi bi-check-circle-fill text-success me-2"></i> <strong>Zero Coparticipação</strong></li>
+                <li><i class="bi bi-check-circle-fill text-success me-2"></i> Receitas Válidas</li>
+                <li><i class="bi bi-check-circle-fill text-success me-2"></i> Especialistas de R$ 150</li>
+              </ul>
+              <div class="btn-wrap text-center mt-auto">
+                <a href="#appointment" class="btn-buy fs-5 px-4 py-3 w-100 fw-bold rounded text-primary border border-primary d-block" style="background: transparent; transition: 0.3s;">Assinar Individual</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="pricing-item featured p-4 p-lg-5 shadow-lg rounded-4 position-relative bg-white h-100" style="border: 2px solid #D4AF37; z-index: 1; overflow: visible !important;">
+              <span class="badge position-absolute start-50 translate-middle px-4 py-2 fs-6 rounded-pill shadow-sm" style="top: 0; background: linear-gradient(90deg, #BF953F, #FCF6BA, #B38728); color: #000; font-weight: 800; white-space: nowrap;">MAIS POPULAR</span>
+              <h3 class="fs-3 fw-bold mb-2 mt-3" style="color: #B38728;">Familiar</h3>
+              <p class="text-muted mb-4">Tranquilidade para as pessoas que você mais ama.</p>
+              <h4 class="display-4 fw-bold mb-2" style="color: #D4AF37;"><sup>R$</sup>149,90<span class="fs-5 text-muted fw-normal"> / mês</span></h4>
+              <p class="text-success fw-bold small mb-4">Até 4 pessoas (Titular + 3)</p>
+              <ul class="text-start fs-6 text-dark mb-5 lh-lg list-unstyled">
+                <li><i class="bi bi-star-fill me-2" style="color: #D4AF37;"></i> Benefícios do Individual</li>
+                <li><i class="bi bi-star-fill me-2" style="color: #D4AF37;"></i> Atendimento Pediátrico</li>
+                <li><i class="bi bi-star-fill me-2" style="color: #D4AF37;"></i> Telepsicologia Família</li>
+                <li><i class="bi bi-star-fill me-2" style="color: #D4AF37;"></i> Apenas R$ 37,47/pessoa</li>
+              </ul>
+              <div class="btn-wrap text-center mt-auto" style="overflow: visible;">
+                <a href="#appointment" class="btn-buy fs-5 px-4 py-3 w-100 fw-bold rounded shadow d-block text-dark" style="background: linear-gradient(90deg, #F5D76E, #D4AF37); border: none;">Assinar Plano Família</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="pricing-item p-4 p-lg-5 shadow-sm rounded-4 bg-white border h-100">
+              <h3 class="fs-4 fw-bold text-dark mb-2">Corporativo</h3>
+              <p class="text-muted mb-4">Saúde para o seu time, produtividade para sua empresa.</p>
+              <h4 class="display-6 fw-bold text-dark mb-4 mt-3">Sob Consulta</h4>
+              <ul class="text-start fs-6 text-dark mb-5 lh-lg list-unstyled mt-5">
+                <li><i class="bi bi-check-circle-fill text-success me-2"></i> <strong>Descontos progressivos</strong></li>
+                <li><i class="bi bi-check-circle-fill text-success me-2"></i> Redução de absenteísmo</li>
+                <li><i class="bi bi-check-circle-fill text-success me-2"></i> Acesso ao Portal Parceiros</li>
+                <li><i class="bi bi-check-circle-fill text-success me-2"></i> Gestão simples inclusão</li>
+              </ul>
+              <div class="btn-wrap text-center mt-auto">
+                <a href="portal-de-negocios.html" class="btn-buy fs-5 px-4 py-3 w-100 fw-bold rounded text-dark border border-dark d-block" style="background: transparent;">Acessar Portal PJ</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-5 pt-3" data-aos="fade-up" data-aos-delay="400">
+          <div class="col-12">
+            <div class="p-3 bg-white rounded-4 shadow-sm border border-light row g-3 text-center">
+              <div class="col-12 col-sm-6 col-lg-3 d-flex flex-column align-items-center mb-2">
+                <i class="fa-solid fa-shield-halved fs-1 text-success mb-2"></i>
+                <h6 class="fw-bold mb-0 text-dark">Adequado à LGPD</h6>
+                <small class="text-muted">Proteção total de dados</small>
+              </div>
+              <div class="col-12 col-sm-6 col-lg-3 d-flex flex-column align-items-center mb-2">
+                <i class="fa-solid fa-file-signature fs-1 text-primary mb-2"></i>
+                <h6 class="fw-bold mb-0 text-dark">Receita ICP-Brasil</h6>
+                <small class="text-muted">Aceita em todo o país</small>
+              </div>
+              <div class="col-12 col-sm-6 col-lg-3 d-flex flex-column align-items-center mb-2">
+                <i class="fa-solid fa-lock fs-1 text-warning mb-2"></i>
+                <h6 class="fw-bold mb-0 text-dark">Criptografia 256-bit</h6>
+                <small class="text-muted">Prontuário 100% Seguro</small>
+              </div>
+              <div class="col-12 col-sm-6 col-lg-3 d-flex flex-column align-items-center mb-2">
+                <i class="fa-solid fa-credit-card fs-1 text-secondary mb-2"></i>
+                <h6 class="fw-bold mb-0 text-dark">Ambiente Seguro</h6>
+                <small class="text-muted">Transações Protegidas</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="faq section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2 class="display-5 fw-bold">Perguntas Frequentes</h2>
+        <p class="fs-5 mt-3">Transparência total: tudo o que você precisa saber para utilizar a telemedicina com segurança.</p>
+      </div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-10" data-aos="fade-up" data-aos-delay="100">
+            <div class="faq-container">
+
+              <div class="faq-item p-3 p-md-4 mb-3 border rounded shadow-sm bg-white">
+                <h3 class="fs-5 fw-bold text-dark mb-0 d-flex align-items-center">
+                  <i class="bi bi-clock-history text-primary me-3 fs-4"></i> Como funciona o Pronto Atendimento (P.A) 24 horas?
+                </h3>
+                <div class="faq-content mt-3 text-destaque">
+                  <p>O processo é <strong>imediato e sem burocracia</strong>. Basta acessar a plataforma pelo seu celular, tablet ou computador a qualquer momento (inclusive madrugadas e feriados), clicar na aba Pronto Atendimento e realizar uma rápida triagem de sintomas. Em poucos minutos, um médico clínico geral entra em chamada de vídeo com você. Ele avaliará o quadro, orientará a conduta e enviará receitas ou atestados, se necessário. Tudo isso de forma ilimitada e com <strong>zero coparticipação</strong>.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right fs-4"></i>
+              </div>
+
+              <div class="faq-item p-3 p-md-4 mb-3 border rounded shadow-sm bg-white">
+                <h3 class="fs-5 fw-bold text-dark mb-0 d-flex align-items-center">
+                  <i class="bi bi-qr-code-scan text-primary me-3 fs-4"></i> A receita médica digital é aceita em qualquer farmácia?
+                </h3>
+                <div class="faq-content mt-3 text-destaque">
+                  <p><strong>Sim, com total segurança e validade legal.</strong> Nossos profissionais de saúde utilizam assinaturas digitais validadas nacionalmente. O documento com a prescrição chega diretamente para você via SMS, e-mail ou fica salvo no aplicativo. Na farmácia, você só precisa apresentar o QR Code na tela do seu celular para que o estabelecimento valide a receita e faça a dispensação, inclusive para antibióticos e medicamentos controlados.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right fs-4"></i>
+              </div>
+
+              <div class="faq-item p-3 p-md-4 mb-3 border rounded shadow-sm bg-white">
+                <h3 class="fs-5 fw-bold text-dark mb-0 d-flex align-items-center">
+                  <i class="bi bi-heart-pulse text-primary me-3 fs-4"></i> As consultas com outros Especialistas estão inclusas na mensalidade?
+                </h3>
+                <div class="faq-content mt-3 text-destaque">
+                  <p>A mensalidade garante o acesso <strong>ILIMITADO</strong> ao Pronto Atendimento com Clínico Geral 24h. Caso o seu quadro exija acompanhamento específico, você poderá agendar consultas diretamente na plataforma com Especialistas (Cardiologia, Neurologia, Pediatria, etc.), Psicólogos ou Nutricionistas. Essas consultas operam no modelo particular (avulso), mas, por ser assinante Move, você tem acesso a uma <strong>tabela de valores exclusivos e altamente reduzidos</strong> em relação ao mercado tradicional, pagando diretamente no momento do agendamento.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right fs-4"></i>
+              </div>
+
+              <div class="faq-item p-3 p-md-4 mb-3 border rounded shadow-sm bg-white">
+                <h3 class="fs-5 fw-bold text-dark mb-0 d-flex align-items-center">
+                  <i class="bi bi-people text-primary me-3 fs-4"></i> Posso incluir minha família no plano?
+                </h3>
+                <div class="faq-content mt-3 text-destaque">
+                  <p><strong>Com certeza!</strong> Nós oferecemos o Plano Familiar, que permite a inclusão rápida do Titular e de até 3 dependentes diretos. Cada membro da família terá seu próprio acesso e prontuário individualizado, garantindo total privacidade e um histórico clínico organizado para todos.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right fs-4"></i>
+              </div>
+
+              <div class="faq-item p-3 p-md-4 mb-3 border rounded shadow-sm bg-white">
+                <h3 class="fs-5 fw-bold text-dark mb-0 d-flex align-items-center">
+                  <i class="bi bi-exclamation-triangle text-primary me-3 fs-4"></i> Existem casos que NÃO devem ser tratados por Telemedicina?
+                </h3>
+                <div class="faq-content mt-3 text-destaque">
+                  <p><strong>Sim.</strong> O atendimento online é excelente para sintomas leves e moderados, orientações e renovação de receitas. No entanto, em casos de <strong>emergência real</strong> — como dores fortes no peito, grande dificuldade de respirar, cortes profundos, acidentes graves, ou desmaios — você deve procurar imediatamente o Pronto Socorro físico mais próximo ou ligar para a emergência (192). A nossa equipe de triagem também fará esse direcionamento preventivo caso identifique sinais de risco.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right fs-4"></i>
+              </div>
+
+              <div class="faq-item p-3 p-md-4 mb-3 border rounded shadow-sm bg-white">
+                <h3 class="fs-5 fw-bold text-dark mb-0 d-flex align-items-center">
+                  <i class="bi bi-shield-check text-primary me-3 fs-4"></i> Meus dados médicos estão seguros na plataforma?
+                </h3>
+                <div class="faq-content mt-3 text-destaque">
+                  <p><strong>A segurança é o nosso pilar.</strong> A infraestrutura de tecnologia atende rigorosamente às leis de proteção e privacidade de dados. Utilizamos comunicação com criptografia avançada nas videochamadas e armazenamento em servidores ultra-seguros. Apenas você e a equipe de saúde que está realizando o atendimento possuem acesso às suas informações sensíveis.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right fs-4"></i>
+              </div>
+
+              <div class="faq-item p-3 p-md-4 mb-3 border rounded shadow-sm bg-white">
+                <h3 class="fs-5 fw-bold text-dark mb-0 d-flex align-items-center">
+                  <i class="bi bi-camera-video text-primary me-3 fs-4"></i> Como o médico pode me avaliar através do vídeo?
+                </h3>
+                <div class="faq-content mt-3 text-destaque">
+                  <p>A avaliação pelo celular baseia-se fortemente na <strong>entrevista clínica</strong> (o relato e o histórico do paciente), que é a etapa mais importante para descobrir o problema. Durante a vídeo-consulta, o profissional fará perguntas dirigidas, observará aspectos visíveis do seu estado de saúde, analisará exames que você subir no sistema e utilizará critérios médicos rigorosos. É uma metodologia amplamente validada para tratar problemas cotidianos de saúde de forma ágil.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right fs-4"></i>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact section light-background">
+      <div class="container section-title" data-aos="fade-up">
+        <h2 class="display-5 fw-bold">Contato e Suporte</h2>
+        <p class="fs-5 mt-3">Estamos aqui para garantir sua melhor experiência.</p>
+      </div>
+      <div class="mb-5" data-aos="fade-up" data-aos-delay="200">
+        <iframe style="border:0; width: 100%; height: 370px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.810578643534!2d-49.1983279!3d-25.4445892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDI2JzQwLjUiUyA0OcKwMTEnNTQuMCJX!5e0!3m2!1spt-BR!2sbr!4v1655225330364!5m2!1spt-BR!2sbr" frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+          <div class="col-12 col-lg-6">
+            <div class="row gy-4">
+              <div class="col-12">
+                <div class="info-item bg-white shadow-sm rounded p-4 d-flex flex-column justify-content-center align-items-center" data-aos="fade-up">
+                  <i class="bi bi-geo-alt fs-1 text-primary mb-3"></i>
+                  <h3 class="fs-4 fw-bold">Central Operacional</h3>
+                  <p class="fs-6 text-muted text-center">Av Maringa, 867 - Emiliano Perneta, Pinhais - PR.</p>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="info-item bg-white shadow-sm rounded p-4 d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="300">
+                  <i class="bi bi-telephone fs-1 text-primary mb-3"></i>
+                  <h3 class="fs-4 fw-bold">WhatsApp Comercial</h3>
+                  <p class="fs-6 text-muted">(41) 9550-0770</p>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="info-item bg-white shadow-sm rounded p-4 d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="400">
+                  <i class="bi bi-envelope fs-1 text-primary mb-3"></i>
+                  <h3 class="fs-4 fw-bold text-center">Email de Suporte</h3>
+                  <p class="fs-6 text-muted text-center" style="word-break: break-all;">contato@movetelemedicina.com.br</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <form action="forms/contact.php" method="post" class="php-email-form bg-white shadow-sm rounded p-4 p-md-5 h-100" data-aos="fade-up" data-aos-delay="500">
+              <h3 class="fs-4 fw-bold mb-4 text-center text-md-start">Envie uma Mensagem</h3>
+              <div class="row gy-4">
+                <div class="col-12 col-md-6">
+                  <input type="text" name="name" class="form-control form-control-lg bg-light" placeholder="Seu Nome" required>
+                </div>
+                <div class="col-12 col-md-6">
+                  <input type="email" class="form-control form-control-lg bg-light" name="email" placeholder="Seu E-mail" required>
+                </div>
+                <div class="col-12">
+                  <input type="text" class="form-control form-control-lg bg-light" name="subject" placeholder="Assunto" required>
+                </div>
+                <div class="col-12">
+                  <textarea class="form-control form-control-lg bg-light" name="message" rows="5" placeholder="Sua dúvida" required></textarea>
+                </div>
+                <div class="col-12 text-center mt-4">
+                  <div class="loading fw-bold text-primary">Enviando...</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message bg-success text-white p-3 rounded fw-bold">Mensagem enviada!</div>
+                  <button type="submit" class="btn btn-primary btn-lg px-5 py-3 fw-bold mt-2 w-100 w-md-auto">Enviar Mensagem</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+<footer id="footer" class="footer border-top" style="background-color: #f8f9fa;">
+    <div class="container footer-top py-5">
+      <div class="row gy-4">
+        
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center mb-3">
+            <span class="sitename fs-3 fw-bold" style="color: #021342;">Move Telemedicina</span>
+          </a>
+          <p class="fs-6 text-muted mb-4">Acesso rápido, seguro e tecnológico à saúde de qualidade para você e sua família em todo o Brasil.</p>
+          
+          <div class="corporate-info text-muted small lh-lg">
+            <p class="mb-1"><i class="bi bi-building me-2" style="color: var(--accent-color);"></i> <strong>Sede:</strong> Av Maringa, 867 - Pinhais/PR</p>
+            <p class="mb-1"><i class="bi bi-file-earmark-text me-2" style="color: var(--accent-color);"></i> <strong>CNPJ:</strong> 53.210.447/0001-51</p>
+            <p class="mb-1"><i class="bi bi-shield-check me-2" style="color: var(--accent-color);"></i> <strong>Registro CRM-PR:</strong> 24806 (PJ)</p>
+            <p class="mb-1"><i class="bi bi-person-badge me-2" style="color: var(--accent-color);"></i> <strong>Resp. Técnica:</strong> Dra. Michelle Massaki (CRM 28435)</p>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4 class="fs-5 fw-bold mb-4" style="color: #021342;">Acesso Rápido</h4>
+          <ul class="list-unstyled lh-lg">
+            <li><a href="#hero" class="text-decoration-none text-muted"><i class="bi bi-chevron-right me-2" style="color: var(--accent-color);"></i>Início</a></li>
+            <li><a href="#about" class="text-decoration-none text-muted"><i class="bi bi-chevron-right me-2" style="color: var(--accent-color);"></i>A Plataforma</a></li>
+            <li><a href="#pricing" class="text-decoration-none text-muted"><i class="bi bi-chevron-right me-2" style="color: var(--accent-color);"></i>Quero Assinar (R$ 49,90)</a></li>
+            <li><a href="portal-de-negocios.html" class="text-decoration-none fw-bold" style="color: #ff4757;"><i class="bi bi-chevron-right me-2" style="color: #ff4757;"></i>Portal Empresas (B2B)</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-3 footer-links">
+          <h4 class="fs-5 fw-bold mb-4" style="color: #021342;">Serviços e Privacidade</h4>
+          <ul class="list-unstyled lh-lg">
+            <li><a href="#featured-services" class="text-decoration-none text-muted"><i class="bi bi-chevron-right me-2" style="color: var(--accent-color);"></i>Pronto Atendimento 24h</a></li>
+            <li><a href="#tabs" class="text-decoration-none text-muted"><i class="bi bi-chevron-right me-2" style="color: var(--accent-color);"></i>Especialidades Médicas</a></li>
+            <li><a href="#" class="text-decoration-none text-muted"><i class="bi bi-chevron-right me-2" style="color: var(--accent-color);"></i>Termos de Uso do App</a></li>
+            <li><a href="#" class="text-decoration-none text-muted"><i class="bi bi-chevron-right me-2" style="color: var(--accent-color);"></i>Política de Privacidade (LGPD)</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 footer-contact">
+          <h4 class="fs-5 fw-bold mb-4" style="color: #021342;">Central do Paciente</h4>
+          <p class="text-muted mb-2"><i class="bi bi-whatsapp me-2 text-success fs-5"></i> <strong>WhatsApp Suporte:</strong><br><span class="ms-4">(41) 9550-0770</span></p>
+          <p class="text-muted mb-4"><i class="bi bi-envelope-at me-2 fs-5" style="color: var(--accent-color);"></i> <strong>E-mail de Contato:</strong><br><span class="ms-4">contato@movetelemedicina.com.br</span></p>
+          
+          <div class="social-links d-flex mt-4">
+            <a href="#" class="d-flex align-items-center justify-content-center rounded-circle border me-2" style="width: 40px; height: 40px; border-color: #021342 !important; color: #021342; transition: 0.3s;" onmouseover="this.style.backgroundColor='#021342'; this.style.color='#fff';" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#021342';"><i class="bi bi-instagram fs-5"></i></a>
+            <a href="#" class="d-flex align-items-center justify-content-center rounded-circle border me-2" style="width: 40px; height: 40px; border-color: #021342 !important; color: #021342; transition: 0.3s;" onmouseover="this.style.backgroundColor='#021342'; this.style.color='#fff';" onmouseout="this.style.backgroundColor='transparent'; this.style.color='#021342';"><i class="bi bi-facebook fs-5"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container-fluid py-4" style="background-color: #021342;">
+      <div class="container d-md-flex align-items-center justify-content-between text-center text-md-start">
+        <div class="text-white-50 small mb-2 mb-md-0">
+          &copy; 2026 <strong>Move Telemedicina</strong>. Todos os Direitos Reservados.<br>
+          <span class="opacity-75">Empresa devidamente registrada e atuante conforme resoluções vigentes do CFM.</span>
+        </div>
+        <div class="text-white-50 small">
+          By <strong class="text-white">Rauf Alencar</strong>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/554195500770" target="_blank" class="whatsapp-float" aria-label="Fale conosco no WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <div id="cookieConsent" class="cookie-banner">
+    <p><i class="bi bi-shield-lock-fill me-2 text-warning fs-5"></i> <strong>Sua privacidade é nossa prioridade.</strong> Utilizamos cookies para melhorar sua experiência, personalizar anúncios e garantir a segurança dos seus dados de saúde, em total conformidade com a LGPD. Ao continuar navegando, você concorda com a nossa política.</p>
+    <button class="btn-accept" onclick="document.getElementById('cookieConsent').style.display='none'">Concordar e Fechar</button>
+  </div>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center bg-primary rounded"><i class="bi bi-arrow-up-short text-white fs-3"></i></a>
+  <div id="preloader"></div>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+</html>
